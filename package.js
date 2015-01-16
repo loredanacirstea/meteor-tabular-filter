@@ -1,6 +1,6 @@
 Package.describe({
   name: 'loredanacirstea:meteor-tabular-filter',
-  summary: 'This package offers a collection filter based on the aldeed:simple-schema structure of your collection. It outputs a Mongo Selector based on the chosen options from the UI. It is compatible with aldeed:tabular selector.',
+  summary: 'Collection filter based on aldeed:simple-schema structure.Output: Mongo Selector.',
   version: '0.1.0',
   git: 'https://github.com/loredanacirstea/meteor-tabular-filter'
 });
