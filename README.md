@@ -1,5 +1,7 @@
 # meteor-tabular-filter
 
+    meteor add loredanacirstea:meteor-tabular-filter
+
 ## Version
 
 !!
