@@ -15,7 +15,7 @@ This package offers a filter which gets data from an [aldeed:simple-schema](http
 
 The `AND` / `OR` operations are done in the added order. Example:
 
-![simple-filter]()
+![](https://raw.githubusercontent.com/loredanacirstea/meteor-tabular-filter/master/examples/simple-filter/public/simple-filter.png)
 
     Priority = medium AND Repetitions > 4 OR Deadline > 01/17/2015 AND State = true
 
