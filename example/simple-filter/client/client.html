@@ -1,0 +1,16 @@
+<head>
+  <title>meteor-tabular-filter</title>
+</head>
+
+<body>
+    <div id="content">
+        {{> expression_filter}}<!-- add this template for the filter -->
+        {{> view_table}}
+    </div>
+</body>
+
+<template name="view_table">
+    <div class="table-responsive">
+        {{> tabular table=TabularTables.Table selector=selector class="table table-striped table-bordered table-hover table-condensed"}}
+    </div>
+</template>
