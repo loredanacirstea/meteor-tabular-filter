@@ -1,0 +1,85 @@
+<template name="expression_filter">
+        <div class="filter_block" id="expression_filter">
+        </div>
+</template>
+
+<template name="simple_filter">
+    {{log no}}
+    <div class="filter_flex" id="simple_filter{{no}}">
+        {{> filter_fields}}
+        {{> filter_extra}}
+    </div>
+</template>
+
+<template name="filter_extra">
+    <div id="filter_operators{{no}}"></div>
+    <div id="filter_button_delete{{no}}"></div>
+</template>
+
+<template name="filter_fields">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" id="field{{no}}" type="button" data-toggle="dropdown" aria-expanded="true">
+        <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+        On Field
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" id="dropdown-menu_fields{{no}}" role="menu" aria-labelledby="field{{no}}">
+        {{#each fields}}
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{this.label}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    <div id="field_operations{{no}}"></div>
+    <div id="field_value{{no}}"></div>
+</template>
+
+<template name="button_locations">
+    <div id="field_button"></div>
+</template>
+
+<template name="filter_operations">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" id="operator{{no}}" type="button" data-toggle="dropdown" aria-expanded="true">
+        {{first}}
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" id="dropdown-menu_operations{{no}}" role="menu" aria-labelledby="operator{{no}}">
+        {{#each all}}
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{{this}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+</template>
+
+<template name="filter_value_input">
+    <input class="form-control" type="text" id="filter_value{{no}}" placeholder="Input Value">
+</template>
+
+<template name="filter_value_select">
+    <select class="form-control" id="filter_value{{no}}">
+        {{#each options}}
+            <option>{{this}}</option>
+        {{/each}}
+    </select>
+</template>
+
+<template name="filter_value_datepicker">
+    <input class="form-control" type="date" id="filter_value{{no}}" placeholder="Pick a date">
+</template>
+
+<template name="filter_button">
+    <button class="btn btn-default" id="call_filter" type="button"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></button>
+</template>
+
+<template name="filter_button_delete">
+    <button class="btn btn-default delete_filter" id="delete_filter{{no}}" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+</template>
+
+<template name="filter_operators">
+    <select class="form-control filter_operators" id="filter_operators_values{{no}}">
+        <option selected disabled>...</option>
+        {{#each operators}}
+            <option>{{this}}</option>
+        {{/each}}
+    </select>
+</template>
