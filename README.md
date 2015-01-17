@@ -2,6 +2,8 @@
 
     meteor add loredanacirstea:meteor-tabular-filter
 
+https://atmospherejs.com/loredanacirstea/meteor-tabular-filter
+
 ## Version
 
 !!
