@@ -1,8 +1,12 @@
 # meteor-tabular-filter
 
-    meteor add loredanacirstea:meteor-tabular-filter
-
 https://atmospherejs.com/loredanacirstea/meteor-tabular-filter
+
+It only works with bootstrap now, so you will have to add:
+
+    meteor add twbs:bootstrap
+    meteor add loredanacirstea:meteor-tabular-filter
+    
 
 ## Version
 
@@ -14,6 +18,8 @@ I recommend this version only for personal use if you want to make quick querrie
 ## Description
 
 This package offers a filter which gets data from an [aldeed:simple-schema](https://github.com/aldeed/meteor-simple-schema) object (collection structure). It outputs a `Mongo Selector` based on the chosen options from the `meteor-tabular-filter` UI. It is compatible with [aldeed:tabular](https://github.com/aldeed/meteor-tabular)'s `selector`.
+
+Basically, meteor-tabular-filter just creates a filter UI from the colection structure and outputs a `Mongo Selector` (such as `{ $and: [ { priority: "medium" }, { state: true } ] }`) after the user chooses the options.
 
 ## What to expect
 
