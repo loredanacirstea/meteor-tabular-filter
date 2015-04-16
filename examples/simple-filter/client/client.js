@@ -12,6 +12,6 @@ Template.view_table.helpers({
   selector: function (){
     var select = Session.get("filter_selector");
     console.log(select);
-    return select;
+    return select ? select : null;
   }
 });
