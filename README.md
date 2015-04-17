@@ -10,10 +10,17 @@ It only works with bootstrap now, so you will have to add:
 
 ## Version
 
-!!
-0.1.1 - It is a buggy, in-work prototype.
+0.1.1_3 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com (app code in the `examples` folder)
 
-I recommend this version only for personal use if you want to make quick querries on your data. For this, see demo at http://simple-filter.meteor.com (app code in the `examples` folder)
+## Works with: 
+
+Meteor 1.1.0.2
+
+aldeed:simple-schema                   1.3.2  A simple schema validation obje...
+aldeed:tabular                         1.1.0  Datatables for large or small d...
+meteor-platform                        1.2.2  Include a standard set of Meteo...
+mrt:moment                             2.8.1  Moment.js, a JavaScript date li...
+twbs:bootstrap                         3.3.4  The most popular front-end fram...
 
 ## Description
 
