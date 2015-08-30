@@ -1,7 +1,7 @@
 Package.describe({
   name: "loredanacirstea:meteor-tabular-filter",
   summary: "Collection filter based on aldeed:simple-schema structure.Output: Mongo Selector.",
-  version: "0.1.1_3",
+  version: "0.1.2",
   git: "https://github.com/loredanacirstea/meteor-tabular-filter.git"
 });
 
