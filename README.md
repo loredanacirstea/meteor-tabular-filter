@@ -31,7 +31,7 @@ Basically, meteor-tabular-filter just creates a filter UI from the colection str
 
 The `AND` / `OR` operations are done in the added order. Example:
 
-![](https://raw.githubusercontent.com/loredanacirstea/meteor-tabular-filter/master/examples/simple-filter/public/simple-filter.png)
+![](https://raw.githubusercontent.com/loredanacirstea/simple-filter/master/public/simple-filter.png)
 
     Priority = medium AND Repetitions > 4 OR Deadline > 01/17/2015 AND State = true
 
