@@ -11,7 +11,7 @@ It only works with bootstrap now, so you will have to add:
 
 ## Version
 
-0.1.1_3 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
+0.1.2 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
 
 ## Works with: 
 
