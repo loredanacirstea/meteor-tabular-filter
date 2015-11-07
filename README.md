@@ -11,14 +11,7 @@ It only works with bootstrap now, so you will have to add:
 
 ## Version
 
-0.1.2 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
-
-## Works with: 
-
-    Meteor 1.1.0.3
-    aldeed:tabular                         1.2.0  Datatables for large or small d...
-    mrt:moment                             2.8.1  Moment.js, a JavaScript date li...
-    twbs:bootstrap                         3.3.5  The most popular front-end fram...
+0.1.3 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
 
 
 ## Description
