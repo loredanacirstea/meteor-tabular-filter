@@ -11,7 +11,7 @@ It only works with bootstrap now, so you will have to add:
 
 ## Version
 
-0.1.3 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
+0.1.5 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
 
 
 ## Description
@@ -85,6 +85,20 @@ The `selector` template helper can be used with [aldeed:meteor-tabular](https://
         </div>
     </template>
 
+## Omit Schema Fields
 
+If you have schema fields that you don't want to include, [extend SimpleSchema](https://github.com/aldeed/meteor-simple-schema#extending-the-schema-options) with: 
+
+    SimpleSchema.extendOptions({
+      tabularFilterOmit: Match.Optional(Boolean)
+    });
+
+and add `tabularFilterOmit: true` to your field, like this:
+
+    deadline: {
+        type: Date,
+        label: "Deadline",
+        tabularFilterOmit: true
+    },
 
 By [Loretek](http://loretek.ro)
