@@ -106,9 +106,22 @@ Template.expression_filter.rendered = function(){
 }
 
 Template.filter_fields.helpers({
+    title: function() {
+        var sess = Session.get("tabular-filter")
+        if(sess && (sess.label || sess.label == ''))
+            return sess.label
+        return 'On Field'
+    },
     fields: function(){
-        if(Session.get("schema")){
-            var fieldObj = Schemas[Session.get("schema")].schema();
+        var input = Session.get("tabular-filter")
+        if(!input)
+            input = Session.get("schema")
+        if(input){
+            if(typeof input == 'object')
+                var schema = input.schema
+            else
+                var schema = input
+            var fieldObj = Schemas[schema].schema();
             var keys = Object.keys(fieldObj);
             var fieldArr = [], ind;
             for(k in keys){

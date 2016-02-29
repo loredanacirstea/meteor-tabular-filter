@@ -9,9 +9,15 @@ It only works with bootstrap now, so you will have to add:
     meteor add loredanacirstea:meteor-tabular-filter
     
 
+Recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
+
+This package is not actively maintained as a default, but I will make small changes if there are easy to fix issues.
+
 ## Version
 
-0.1.5 - It is a buggy, in-work prototype, recommended only for personal use: making quick querries on your data. For this, see demo at http://simple-filter.meteor.com , with source at: https://github.com/loredanacirstea/simple-filter.
+0.2.0 - Changes: 
+
+`Session.set("schema", "Table");` is now: `Session.set("tabular-filter", {schema: "Table", label: 'On Field'});`, so you can have a custom label for the filter.
 
 
 ## Description
@@ -44,7 +50,7 @@ Set a Session variable with the name of your Simple Schema object.
     //examples/simple-filter/client/client.js
 
     Template.view_table.rendered = function(){
-        Session.set("schema", "Table");
+        Session.set("tabular-filter", {schema: "Table", label: 'On Field'});
     }
 
 Set a template helper (or another method) from the filter's `filter_selector` Session variable.
