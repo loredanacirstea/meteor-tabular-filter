@@ -5,33 +5,6 @@ Session.set("filter_selector", '');
 Session.set("filter_queries", {});
 Session.set("filter_ops", {});
 
-operators = {
-    "String":[
-        "=",
-        "contains",
-        "regex"
-    ],
-    "Number":[
-        "=",
-        ">",
-        "<"
-    ],
-    "Boolean": [
-        "="
-    ],
-    "Date": [
-        "=",
-        "<",
-        ">"
-    ],
-    "Object": [
-        "has value",
-        "has key"
-    ]
-}
-
-//filter_operators = ["true", "false", "AND", "OR", "FieldExpr"];
-filter_operators = ["AND", "OR"];
 
 var object_values = function(obj){
     var values = [];
@@ -76,11 +49,11 @@ create_selector = function(field, operator, value, type, options){
             select[field] = {$lt: value};
             return select;
             break;
-        case "contains":
+        case containsValue:
             select[field] = {$regex: value, $options: 'i'};
             return select;
             break;
-        case "regex":
+        case regExpValue:
             select[field] = {$regex: value, $options: options};
             return select;
             break;
@@ -137,6 +110,63 @@ Template.filter_fields.helpers({
             return fieldArr;
         }
     }
+});
+
+Template.filter_fields.onCreated(function(){
+    if ((ref = Session.get('tabular-filter')) != null ? ref.regex_value : void 0){
+        regExpValue = Session.get('tabular-filter').regex_value
+    }
+    else{
+        regExpValue = "regex"
+    }
+    if ((ref = Session.get('tabular-filter')) != null ? ref.contains_value : void 0){
+        containsValue = Session.get('tabular-filter').contains_value
+    }
+    else{
+        containsValue = "contains"
+    }
+    operators = {
+        "String":[
+            "=",
+            containsValue,
+            regExpValue
+        ],
+        "Number":[
+            "=",
+            ">",
+            "<"
+        ],
+        "Boolean": [
+            "="
+        ],
+        "Date": [
+            "=",
+            "<",
+            ">"
+        ],
+        "Object": [
+            "has value",
+            "has key"
+        ]
+    }
+    //filter_operators = ["true", "false", "AND", "OR", "FieldExpr"];
+    console.log(Session.get('tabular-filter').or_label);
+    var andLabel, orLabel;
+    if ((ref = Session.get('tabular-filter')) != null ? ref.and_label : void 0){
+        andLabel = Session.get('tabular-filter').and_label
+    }
+    else{
+        andLabel = 'AND'
+    }
+
+    if ((ref = Session.get('tabular-filter')) != null ? ref.or_label : void 0){
+        orLabel = Session.get('tabular-filter').or_label
+    }
+    else{
+        orLabel = 'OR'
+    }
+
+    filter_operators = [{key: "AND", label: andLabel}, {key: "OR", label: orLabel}];
 });
 
 Template.filter_fields.events({
@@ -329,5 +359,15 @@ Template.filter_operators.events({
         }
     }
 });
+
+Template.filter_value_input.helpers({
+    input_value_placeholder: function() {
+        var sess = Session.get("tabular-filter")
+        if (sess && (sess.input_value_placeholder || sess.input_value_placeholder == ''))
+            return sess.input_value_placeholder
+        return 'Input Value'
+    }
+});
+
 
 }
