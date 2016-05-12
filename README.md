@@ -15,9 +15,25 @@ This package is not actively maintained as a default, but I will make small chan
 
 ## Version
 
-0.2.0 - Changes: 
+0.2.1 - Changes: 
 
-`Session.set("schema", "Table");` is now: `Session.set("tabular-filter", {schema: "Table", label: 'On Field'});`, so you can have a custom label for the filter.
+You can have custom labels, so `Session.set("schema", "Table");` is now: 
+
+```
+Session.set("tabular-filter", {
+  schema: "Table", // the only one required
+  label: "",
+  and_label: "",
+  or_label: "",
+  input_value_placeholder: "",
+  regex_value: "",
+  contains_value: ""
+});
+```
+
+You can use i18n and do: `label: i18n('On Field')`
+
+
 
 
 ## Description
