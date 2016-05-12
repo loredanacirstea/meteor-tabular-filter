@@ -150,7 +150,6 @@ Template.filter_fields.onCreated(function(){
         ]
     }
     //filter_operators = ["true", "false", "AND", "OR", "FieldExpr"];
-    console.log(Session.get('tabular-filter').or_label);
     var andLabel, orLabel;
     if ((ref = Session.get('tabular-filter')) != null ? ref.and_label : void 0){
         andLabel = Session.get('tabular-filter').and_label
