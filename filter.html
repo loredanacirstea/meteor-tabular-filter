@@ -51,7 +51,7 @@
 </template>
 
 <template name="filter_value_input">
-    <input class="form-control" type="text" id="filter_value{{no}}" placeholder="Input Value">
+    <input class="form-control" type="text" id="filter_value{{no}}" placeholder="{{input_value_placeholder}}">
 </template>
 
 <template name="filter_value_select">
@@ -78,7 +78,7 @@
     <select class="form-control filter_operators" id="filter_operators_values{{no}}">
         <option selected disabled>...</option>
         {{#each operators}}
-            <option>{{this}}</option>
+            <option value="{{key}}">{{label}}</option>
         {{/each}}
     </select>
 </template>
