@@ -126,6 +126,9 @@ Template.filter_fields.onCreated(function(){
         containsValue = "contains"
     }
     operators = {
+        "StringExact":[
+            "="
+        ],
         "String":[
             "=",
             containsValue,
@@ -179,6 +182,11 @@ Template.filter_fields.events({
             Session.set("autoform_options","{}");
             dropdown_select($(this)[0], "field" + no);
             var type = $(this)[0].type.name;
+            
+            if ($(this)[0].exactMatch){
+                type = 'StringExact'; 
+            }
+                
             $("#field" + no + ":first-child").attr("field_type", type);
             $('#field_operations' + no ).html('');
             Blaze.renderWithData(Template.filter_operations, {first: operators[type][0], all: operators[type], no: no}, document.getElementById('field_operations' + no ));
